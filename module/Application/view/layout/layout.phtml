@@ -1,0 +1,64 @@
+<?= $this->doctype() ?>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <?= $this->headTitle('ZF Skeleton Application')->setSeparator(' - ')->setAutoEscape(false) ?>
+
+        <?= $this->headMeta()
+            ->appendName('viewport', 'width=device-width, initial-scale=1.0')
+            ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')
+        ?>
+
+        <!-- Le styles -->
+        <?= $this->headLink(['rel' => 'icon', 'type'=>'image/png', 'size'=>'32x32', 'href' => $this->basePath('../img/favicon-32x32.ico')])
+            ->prependStylesheet($this->basePath('css/style.css'),'screen',true,array('id'=>'style'))
+            ->prependStylesheet($this->basePath('css/bootstrap.min.css'))
+        ?>
+        <!-- Scripts -->
+        <?= $this->inlineScript()
+            ->prependFile($this->basePath('js/softbery-js.js'))
+            ->prependFile($this->basePath('js/bootstrap.min.js'))
+            ->prependFile($this->basePath('js/jquery-3.3.1.min.js'))
+        ?>
+    </head>
+    <body>
+        <?php $ver = "4.10.20." . rand(0, 9999);
+                // echo $VERSION;
+                echo $ver;
+                echo $this->basePath() . '/img/favicon.ico';?>
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <a class="navbar-brand" href="<?= $this->url('home') ?>">
+                        <img src="<?= $this->basePath('img/softbery_logo.png') ?>" height="38" alt="Softbery <?= \Application\Module::VERSION ?>"/>&nbsp;Softbery&reg;<span style="font-size: 8pt;">IT CMS</span>
+                    </a>
+                </div>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto" style="float: right">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="<?= $this->url('home') ?>">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li><a class="nav-link" href="<?= $this->url('administration') ?>">Admin <span class="sr-only">(current)</span></a></li>
+                        <li><a class="nav-link" href="<?= $this->url('articles', ['action'=>'index', 'id'=>2]) ?>">Article</a></li>
+                    </ul>
+                </div>
+                <button onClick="change('<?=$this->basePath()?>')" id="styleChange" value="Open Curtain">Open Curtain</button>
+            </div>
+        </nav>
+        <p id="cos">TEXT</p>
+        <!-- Content -->
+        <div class="container">
+            <?= $this->content ?>
+            <hr>
+            <footer>
+                <p>&copy; 2005 - <?= date('Y') ?> by Softbery&reg;. All rights reserved.</p>
+            </footer>
+        </div>
+        <?= $this->inlineScript() ?>
+    </body>
+</html>

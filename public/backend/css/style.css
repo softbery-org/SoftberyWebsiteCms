@@ -1,0 +1,20 @@
+/*
+* @Author: Softbery Group
+* @Date:   2020-10-25 22:22:10
+* @Last Modified by:   Softbery Group
+* @Last Modified time: 2020-10-29 16:30:39
+*/
+body {
+    padding-top: 60px;
+    padding-bottom: 40px;
+}
+
+div.container a.navbar-brand > img {
+    display: inline;
+    margin-right: 4px;
+    margin-top: -2px;
+}
+
+#myButton1{
+	background-color: red;
+}
